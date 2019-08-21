@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-toolbar text-center>
+    <ion-title>Recipes</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let recipe of recipes" (click)="clickHandle(recipe.id)">
+      <ion-avatar slot="start">
+        <ion-img [src]="recipe.imageURL"></ion-img>
+      </ion-avatar>
+      <ion-label>{{ recipe.title }}</ion-label>
+      <ion-icon name="close-circle-outline" (click)="deleteRecipe(recipe.id)"></ion-icon>
+    </ion-item>
+  </ion-list>
+</ion-content>

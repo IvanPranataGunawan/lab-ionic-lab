@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <title>Budget Planner</title>
+        <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@4.7.4/dist/ionic/ionic.esm.js"></script>
+        <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core@4.7.4/dist/ionic/ionic.js"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@4.7.4/css/ionic.bundle.css"/>
+    </head>
+    <body overflow-y:scroll>
+        <ion-header> 
+            <ion-toolbar color="secondary">
+                <ion-title text-center>Budget Planner</ion-title>
+            </ion-toolbar>
+        </ion-header>
+        <ion-card>
+            <ion-card-header>
+                <ion-card-title text-center>Input Pengeluaran</ion-card-title>
+            </ion-card-header>
+            
+            <ion-card-content>
+                <ion-item>
+                    <ion-label>Nama Pengeluaran   : </ion-label>
+                    <ion-input type="text" id="nama"></ion-input>
+                </ion-item>
+                <ion-item>
+                    <ion-label>Jumlah Pengeluaran : </ion-label>
+                    <ion-input type="number" id="jumlah"></ion-input>
+                </ion-item>
+                <ion-button class="tambah" color="primary" float-right>+ Tambah</ion-button>
+                <ion-button class="hapus" color="danger" fill="outline" float-right>x Hapus</ion-button>
+                <ion-alert-controller></ion-alert-controller>
+            </ion-card-content>
+        </ion-card>
+        <ion-list id="data"></ion-list>
+        <ion-text id="hasil">   Total Pengeluaran : Rp. 0.00</ion-text>
+    </body>
+    <script src="app.js"></script>
+</html>
