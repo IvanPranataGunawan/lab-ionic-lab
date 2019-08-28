@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-button slot="start">
+      <ion-back-button defaultHref="/recipes"></ion-back-button>
+    </ion-button>
+    
+      <ion-button slot="primary" color="danger" (click)="presentAlert(loadedRecipe.id)">
+        <ion-icon name="trash" slot="icon-only"></ion-icon>
+      </ion-button>
+
+    <ion-title text-center>{{ loadedRecipe.title }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col class="ion-no-padding">
+        <ion-img [src]="loadedRecipe.imageUrl"></ion-img>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-item *ngFor="let i of loadedRecipe.ingredients">{{ i }}</ion-item>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
