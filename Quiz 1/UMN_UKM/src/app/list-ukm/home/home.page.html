@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>UMN UKM</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-card *ngFor="let list of loadedListUKM.slice(0)" >
+          <ion-card-header>
+            <ion-card-title>{{ list.title }}</ion-card-title>
+          </ion-card-header>
+                
+          <ion-card-content>
+            <p>{{ list.description }}</p>
+            <div text-right>
+              <ion-button color="primary" (click)="onAddList(list.title)">Join</ion-button>
+            </div>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

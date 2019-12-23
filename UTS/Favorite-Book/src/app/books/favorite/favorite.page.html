@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Favorite</ion-title>
+    <ion-buttons slot="end">
+        <ion-button routerLink="/profil">
+            <ion-icon name="contact" text-right></ion-icon>
+        </ion-button> 
+      </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+      <ion-row>
+        <ion-col>
+          <ion-card *ngFor="let myList of myBooks" >
+            <div style="width: 20%; float: left;">
+              <ion-img [src]="myList.imageUrl" style="width: 100%;"></ion-img>
+            </div>
+            <div style="width: 80%; float: right;">
+              <ion-card-header>
+                <ion-card-title>{{ myList.title }}</ion-card-title>
+              </ion-card-header>
+              <ion-card-content>
+                <p>{{ myList.desc }}</p>
+                <br>
+                <ion-icon name="pricetag" style="float: left;"></ion-icon> 
+                <p>{{ myList.kategori }}</p>
+                  <ion-buttons slot="end">
+                    <ion-button (click)="onCancelMyBooks(myList.id)">
+                      <ion-icon name="heart" color="danger" text-right></ion-icon>
+                    </ion-button> 
+                  </ion-buttons>
+              </ion-card-content>
+            </div>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-list>
+</ion-content>

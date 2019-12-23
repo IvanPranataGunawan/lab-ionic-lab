@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Utama</ion-title>
+    <ion-buttons slot="end">
+      <ion-button routerLink="/profil">
+          <ion-icon name="contact" text-right></ion-icon>
+      </ion-button> 
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-card *ngFor="let list of loadedBooks.slice(0)" >
+          <div style="width: 20%; float: left;">
+            <ion-img [src]="list.imageUrl" style="width: 100%;"></ion-img>
+          </div>
+          <div style="width: 80%; float: right;">
+            <ion-card-header>
+              <ion-card-title>{{ list.title }}</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+              <p>{{ list.desc }}</p>
+              <br>
+              <ion-icon name="pricetag" style="float: left;"></ion-icon> 
+              <p>{{ list.kategori }}</p>
+                <ion-buttons slot="end">
+                    <ion-button (click)="favorite(list)">
+                      <ion-icon name="heart-empty" [color]="list.ket===true ? 'danger' : ''"></ion-icon>
+                    </ion-button> 
+                  </ion-buttons>
+            </ion-card-content>
+          </div>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
